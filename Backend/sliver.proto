@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sliver;
+
+service SliverService {
+    rpc ExecuteCommand (CommandRequest) returns (CommandResponse);
+}
+
+message CommandRequest {
+    string session_id = 1;
+    string command = 2;
+}
+
+message CommandResponse {
+    string result = 1;
+    string error = 2;
+}
